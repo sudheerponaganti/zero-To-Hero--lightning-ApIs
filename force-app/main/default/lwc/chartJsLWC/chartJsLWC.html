@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Total Opportunities1">
+        <template if:true={chartData.length}>
+            <c-chart-js-demo type="bar" pie-data={chartData} pie-labels={chartLabels}></c-chart-js-demo>
+        </template>
+    
+    </lightning-card>
+
+    <lightning-card title="Total Opportunities2">
+        <template if:true={chartData.length}>
+            <c-chart-js-demo type="doughnut"  pie-data={chartData} pie-labels={chartLabels}></c-chart-js-demo>
+        </template>
+        
+    </lightning-card>
+</template>

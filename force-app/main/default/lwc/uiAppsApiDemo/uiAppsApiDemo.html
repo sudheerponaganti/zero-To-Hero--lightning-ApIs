@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Nav Items Api Demo">
+        <div class="slds-var-m-around_medium">
+
+            <template if:true={pageTypeArray}>
+                <table>
+                    <thead>
+                        <tr>
+                        <th><strong>PageType</strong></th>
+                        <th><strong>Object Name</strong></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={pageTypeArray} for:item="pageItem">
+                            <tr key={pageItem.developerName}>
+                                <td >{pageItem.developerName}</td>
+                                <td>{pageItem.objectApiName}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

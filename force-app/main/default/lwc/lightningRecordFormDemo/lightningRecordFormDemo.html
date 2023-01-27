@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Lightning record form Demo">
+        <div class="slds-var-m-around_medium">
+            <lightning-input
+            type="checkbox"
+            label="Show/Hide"
+            checked={showFields}
+            onchange={toggleFields}
+        ></lightning-input>
+        <template if:true={showFields}>
+            <lightning-record-form
+            object-api-name={objectApiName}
+            record-id={recordId}
+            fields={fields}
+            columns="2"
+            mode="view"
+            density="Auto"
+            onsubmit={submitHandler}
+            onsuccess={successHandler}>
+            </lightning-record-form>
+            </template>
+        </div>
+    </lightning-card>
+   
+</template>

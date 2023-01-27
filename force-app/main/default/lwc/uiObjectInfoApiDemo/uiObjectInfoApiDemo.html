@@ -1,0 +1,58 @@
+<template>
+    <lightning-card title="ObjectInfoApi --- singleObject Info ">
+        <div class="slds-var-m-around_medium">
+            <template if:true={singleObjectInfo}>
+  <p>Object name --- : {singleObjectInfo.apiName}</p>
+  <p>Object Label --: {singleObjectInfo.label}</p>
+        </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="ObjectInfoApi --- multiObject Infos">
+        <div class="slds-var-m-around_medium">
+            <template if:true={multiObjectInfos}>
+                <template for:each={multiObjectInfos} for:item="objItem">
+                    <div key={objItem.result.apiName}>
+                    <p>Object name --- : {objItem.result.apiName}</p>
+                    <p>Object Label --: {objItem.result.label}</p>
+                </div>
+                </template>
+        </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="ObjectInfoApi --- SingleField PickListValues">
+        <div class="slds-var-m-around_medium">
+           <template if:true={singleFieldPickVals}>
+            <p><strong>Account Industry Pick List Fields</strong></p>
+            <template for:each={singleFieldPickVals} for:item="pickItem">
+           <p key={pickItem.value}>{pickItem.value}</p>
+            </template>
+           </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="ObjectInfoApi --- multiField PickListValues">
+        <div class="slds-var-m-around_medium">
+           <template if:true={multiFieldPickVals}>
+        <table>
+            <thead>
+                <tr>
+                    <th>Account Industry PickList</th>
+                    <th>Account Rate PickList</th>
+                </tr>
+            </thead>
+            <tbody>
+  <template for:each={multiFieldPickVals} for:item="pickItem">
+      <tr key={pickItem.rateValue}>
+        <td>{pickItem.indValue}</td>
+        <td>{pickItem.rateValue}</td>
+      </tr>
+  </template>
+
+            </tbody>
+        </table>
+           </template>
+        </div>
+    </lightning-card>
+</template>

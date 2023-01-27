@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Child-Parent  Parent Comp" onclosemodal={cardHandler}>
+        <div class="slds-var-m-around_medium" >
+            <lightning-button  class="slds-var-m-around_medium" label="showChild Modal" variant="brand" onclick={modalOpenHandler} ></lightning-button>
+
+            <template if:true={showChildModal}>
+                <c-cp-communication-child onclosemodal={closeModalHandler} ></c-cp-communication-child>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,7 @@
+.container{
+    background-color: var(--lwc-colorBackground);
+}
+
+.pelement{
+    text-align: right;
+}

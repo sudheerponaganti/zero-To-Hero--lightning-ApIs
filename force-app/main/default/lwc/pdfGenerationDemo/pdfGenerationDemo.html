@@ -1,0 +1,43 @@
+<template>
+        <div class="conatiner" style="background-color:white;padding: 25px;">
+            <img src={imageUrl}  style="height:55px; width:61px;margin-bottom: 40px;"/>
+            <div style="display: inline-block;float: right;text-align: right;" >
+                <p>Invoice #: {invoiceData.invoiceNo}</p>
+                <p>Created #: {invoiceData.invoiceCreated}</p>
+                <p>Due #: {invoiceData.invoiceDue}</p>
+            </div>
+            <div>
+            <div style="display:inline-block">
+                <p>{invoiceData.companyName}</p>
+                <p>{invoiceData.address1}</p>
+                <p>{invoiceData.address2}</p>
+            </div>
+     
+
+            <div style="display:inline-block;float:right;text-align: right;">
+                <p>{clientData.client}</p>
+                <p>{clientData.userName}</p>
+                <p>{clientData.email}</p>
+            </div>
+        </div>
+
+        <div style=" background-color: lightgrey;margin: 8px;padding: 8px;">
+            <div style="display:inline-block;"><strong>Services</strong></div>
+            <div  style="display:inline-block; float:right;"><strong>Amount</strong></div>
+
+        </div>
+            <template iterator:service={services}>
+ <div key={service.value.name} style="padding: 8px;">
+    <p style="display:inline-block;">{service.value.name}</p>
+    <p style="display:inline-block; float:right;">${service.value.amount}</p>
+ </div>
+
+ <div if:true={service.last} key={service.value.name}  style="padding: 8px;">
+    <p style="display:inline-block; float:right;"><strong>Total Amount : ${totalAmount}</strong></p>
+ </div>
+            </template>
+        </div>
+
+
+ <lightning-button class="slds-var-m-around_medium" title="genertae Pdf"  variant="brand" label="generatePDF" onclick={pdfHandler} ></lightning-button>
+</template>

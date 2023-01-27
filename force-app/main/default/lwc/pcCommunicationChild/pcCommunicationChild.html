@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Primitiva Data Handling in Child">
+        <div class="slds-var-m-around_medium">
+            <p>The primitiva value from parent is - <strong>{primitiveVal}</strong></p>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Carosel Data Handling">
+        <div class="slds-var-m-around_medium">
+            <!-- <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">Basic Carousel -->
+                <lightning-carousel>
+                    <template for:each={carouselDetails} for:item="carouselItem">
+                        <lightning-carousel-image
+                        key={carouselItem.header}
+                        src = {carouselItem.src}
+                        header = {carouselItem.header}
+                        description = {carouselItem.description}
+                        alternative-text = {carouselItem.alternativeText}>
+                    </lightning-carousel-image>
+                    </template> 
+                </lightning-carousel>
+            <!-- </div> -->
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Child event Handling from parent">
+        <div class="slds-var-m-around_medium">
+            <lightning-progress-bar value={progressVal} size="large" variant="circular"></lightning-progress-bar>
+            <p>{progressVal}</p>
+        </div>
+    </lightning-card>
+
+</template>

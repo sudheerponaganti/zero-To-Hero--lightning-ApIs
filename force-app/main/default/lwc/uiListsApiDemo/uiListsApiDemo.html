@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title=" Ui Lists API : wireListInfo By Name">
+        <div class="slds-var-m-around_medium">
+
+            <template if:true={listInfoApiItems}>
+                <table>
+                    <thead>
+                        <tr>
+                        <th><strong>Account Typle FieldName</strong></th>
+                        <th><strong>Accounnt Label</strong></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={listInfoApiItems} for:item="listItem">
+                            <tr key={listItem.fieldApiName}>
+                                <td >{listItem.fieldApiName}</td>
+                                <td>{listItem.label}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+
+            </template>
+
+        </div>
+    </lightning-card>
+    <lightning-card title="wireListInfos By Name">
+        
+    </lightning-card>
+</template>

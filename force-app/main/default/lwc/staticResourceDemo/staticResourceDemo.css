@@ -1,0 +1,22 @@
+.radhaKrishna{
+width : 236px;
+height:180px;
+border-radius: 50px;
+border:5px solid blue;
+}
+.radhaKrishna:hover{
+    animation: heartBeat; 
+    animation-duration: 2s;
+}
+
+.hanuma{
+    margin-left: 24px;
+    width : 200px;
+    height:200px;
+    border-radius: 100px;
+    border: 5px solid black;
+}
+.hanuma:hover{
+    animation:rotateIn;
+    animation-duration : 2s;
+}

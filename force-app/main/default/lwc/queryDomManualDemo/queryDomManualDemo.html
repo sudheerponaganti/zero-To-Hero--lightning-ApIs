@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="QuerySelector application & Manual Dom ">
+        <div class="slds-var-m-around_medium">
+            <p class="hello"> Hi I am a LWC </p>
+            <template for:each={userData} for:item="user">
+                <p   class="name" key={user}>{user}</p>
+            </template>
+          <div class="manual" lwc:dom="manual"></div>
+            <button onclick={fetchDomHandler} >fetchDOM</button>
+        </div>
+    </lightning-card>
+</template>

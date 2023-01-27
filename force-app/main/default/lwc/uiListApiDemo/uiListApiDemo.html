@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Ui List API -  wireListInfo By Name">
+        <div class="slds-var-m-around_medium">
+
+            <template if:true={listInfoApiItems}>
+                <table>
+                    <thead>
+                        <tr>
+                        <th><strong>ContactId</strong></th>
+                        <th><strong>Contact Name</strong></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={listInfoApiItems} for:item="listItem">
+                            <tr key={listItem.id}>
+                                <td >{listItem.fields.Id.value}</td>
+                                <td>{listItem.fields.Name.value}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+                <lightning-button label="Previous" class="slds-var-m-around_medium" onclick={handlePreviousPage}></lightning-button>
+                <lightning-button label="Next" class="slds-var-m-around_medium" onclick={handleNextPage}></lightning-button>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

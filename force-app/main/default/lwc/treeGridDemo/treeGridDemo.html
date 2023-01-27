@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Tree Grid" >
+            <p class="slds-m-bottom_xx-small">The rows currently marked as expanded are: <span class="slds-text-heading_small">{currentExpandedRows}</span></p>
+            <lightning-button label="Get Current Expanded Rows" onclick={getCurrentExpandedRows}></lightning-button>
+
+    <div class="slds-var-m-around_medium">
+            <lightning-tree-grid
+            class="treeGrid"
+            hide-checkbox-column="true"
+                columns={gridColumns}
+                data={gridData}
+                expanded-rows={gridExpandedRows}
+                key-field="name"
+                is-loading={gridLoadingState}
+                ontoggle={handleRowToggle}
+            ></lightning-tree-grid>
+    </div>
+</lightning-card>
+</template>

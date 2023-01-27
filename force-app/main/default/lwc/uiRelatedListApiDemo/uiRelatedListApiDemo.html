@@ -1,0 +1,55 @@
+<template>
+    <lightning-card title="uiRelatedListApi--- RelatedListCount">
+        <template if:true={responseData}>
+            <div class="slds-var-m-around_medium">
+                <p>
+                    the count of Opportunites to Account record
+                    <strong>{responseData.listReference.inContextOfRecordId}</strong> is : {responseData.count}
+                </p>
+            </div>
+        </template>
+    </lightning-card>
+
+    <lightning-card title="uiRelatedListApi----RelatedListInfo">
+        <template if:true={displayColumns}>
+            <div class="slds-var-m-around_medium">
+                <template for:each={displayColumns} for:item="col">
+                    <p key={col.fieldApiName}>
+                        {col.label}
+                    </p>
+                </template>
+            </div>
+        </template>
+    </lightning-card>
+
+    <lightning-card title="uiRelatedListApi----RelatedListInfoBatch">
+        <template if:true={batchResults}>
+            <div class="slds-var-m-around_medium">
+                <template for:each={batchResults} for:item="batchItem">
+                    <div key={batchItem.result.label}>
+                        <p><Strong>{batchItem.result.fieldApiName} --- {batchItem.result.label}</Strong></p>
+                        <template for:each={batchItem.result.displayColumns} for:item="batchDispay">
+                            <div key={batchDispay.fieldApiName}>
+                                <p>{batchDispay.label}</p>
+                            </div>
+
+                        </template>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </lightning-card>
+
+
+    <lightning-card title="uiRelatedListApi---RelatedListRecords">
+        <template if:true={relatedRecords}>
+            <div class="slds-m-around_medium">
+                <template for:each={relatedRecords} for:item="rec">
+                    <p key={rec.fields.Id.value}>
+                        {rec.fields.Name.value}
+                    </p>
+                </template>
+            </div>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,11 @@
+
+.animated{
+    margin-top:28px;
+    color:brown;
+}
+.animated:hover{
+    font-weight: 1000;
+    font-size: 30px;
+    animation: bounce;
+    animation-duration: 2s;
+}

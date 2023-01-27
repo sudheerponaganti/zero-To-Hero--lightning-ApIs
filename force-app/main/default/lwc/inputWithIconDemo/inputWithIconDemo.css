@@ -1,0 +1,20 @@
+.inputIcon{
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    height: 30px;
+    width:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* .slds-input{
+    padding-right:25px;
+} */
+.icon-right{
+right:1px;
+}
+
+.icon-left{
+    left: 1px;
+}

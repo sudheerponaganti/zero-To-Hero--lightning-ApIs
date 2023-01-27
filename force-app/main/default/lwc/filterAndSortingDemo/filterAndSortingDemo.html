@@ -1,0 +1,59 @@
+<template>
+    <lightning-card title="Filtering And Sorting Demo">
+
+        <div class="slds-var-m-around_medium">
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="3" padding="around-medium">
+                    <lightning-combobox
+                    name="filterBy"
+                    label="filterBy"
+                    value={filterBy}
+                    placeholder="Select Field"
+                    options={filterByOptions}
+                    onchange={filterByHandler} ></lightning-combobox>
+                </lightning-layout-item>
+                <lightning-layout-item size="4" padding="around-medium">
+                    <lightning-input type="text" label="Filter" onchange={inputChangeHandler}></lightning-input>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="3" alignment-bump="left" padding="around-medium">
+                    <lightning-combobox
+                    name="sortedBy"
+                    label="sortedBy"
+                    value={sortBy}
+                    placeholder="Select Field"
+                    options={sortByOptions}
+                    onchange={sortByHandler} ></lightning-combobox>
+                </lightning-layout-item>
+              
+            </lightning-layout>
+            <table>
+                <thead>
+                    <tr>
+
+                        <template for:each={headData} for:item="head">
+                            <th key={head} class="headerClass">{head}</th>
+                        </template>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+
+                    <template for:each={filteredData} for:item="dataItem">
+                        <tr key={dataItem.Id}>
+                            <td>{dataItem.Id}</td>
+                            <td>{dataItem.FirstName}</td>
+                            <td>{dataItem.LastName}</td>
+                            <td>{dataItem.Email}</td>
+                        </tr>
+
+                    </template>
+
+
+                </tbody>
+            </table>
+        </div>
+    </lightning-card>
+</template>

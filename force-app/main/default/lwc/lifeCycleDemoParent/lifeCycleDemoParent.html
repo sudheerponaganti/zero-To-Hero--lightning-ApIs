@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Life Cycle Hooks Parent ">
+        <div class="slds-var-m-around_medium">
+            <p><strong>Constructor</strong>- {constructorval}</p>
+            <p><strong>ConnectedCallBack</strong>-{connectedCallBackval}</p>
+            <p><strong>RenederedCallBack</strong>-{renderedCallBackVal}</p>
+            <p><strong>Rendermethod</strong>-{renderval}</p>
+
+            <lightning-button variant="destructive" label="SignIn" title="SignInForm"
+             onclick={handleClick} class="slds-var-m-around_medium"></lightning-button>
+            <lightning-button variant="success" label="SignUp" title="SignUpForm" 
+            onclick={handleClick} class="slds-var-m-around_medium"></lightning-button>
+        </div>
+        <template if:false={showChildVal}>
+            <lightning-button variant="success" label="Call Child" title="Call Child" 
+            onclick={handleChild} class="slds-var-m-around_medium"></lightning-button>
+        </template>
+        <template if:true={showChildVal}>
+            <lightning-button variant="destructive" label="RemoveChild" title="Remove child"
+            onclick={handleChild} class="slds-var-m-around_medium"></lightning-button>
+        </template>
+      
+    </lightning-card>
+    <template if:true={showChildVal}>
+        <c-life-cycle-demo-child></c-life-cycle-demo-child>
+    </template>
+   
+</template>

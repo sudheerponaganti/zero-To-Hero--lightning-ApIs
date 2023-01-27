@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Record View Form Demo">
+        <div class="slds-var-m-around_medium">
+            <lightning-input
+            type="checkbox"
+            label="Show/Hide"
+            checked={showFields}
+            onchange={toggleFields}
+        ></lightning-input>
+            <lightning-record-view-form
+            object-api-name={objectApiName}
+            record-id={recordId}
+            fields={fields}>
+        <template if:true={showFields}>
+            <lightning-output-field field-name={idField} >
+            </lightning-output-field>
+            
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-output-field field-name={nameField}  >
+                    </lightning-output-field>
+                    <lightning-output-field field-name={industryField}  >
+                    </lightning-output-field>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-output-field field-name={revenueField}  >
+                    </lightning-output-field>
+                    <lightning-output-field field-name={ratingField} >
+                    </lightning-output-field>
+                </div>
+            </div> 
+        
+        </template>
+        </lightning-record-view-form>
+        </div>
+    </lightning-card>
+</template>

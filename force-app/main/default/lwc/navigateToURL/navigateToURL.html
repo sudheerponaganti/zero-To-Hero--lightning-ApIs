@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Navigate to URL">
+        <div class="slds-var-m-around_medium">
+           
+     <a href={url} onclick={handleClick}>Account Home</a>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="navigate to LWC Page">
+        <div class="slds-var-m-around_medium">
+            <lightning-button variant="brand" label="Navigate to LWC Page" onclick={navigateLWCHandler}></lightning-button>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="navigate to Aura Page">
+        <div class="slds-var-m-around_medium">
+            <lightning-button variant="brand" label="Navigate to Aura Page" onclick={navigateAuraHandler}></lightning-button>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="navigate to VF Page">
+        <div class="slds-var-m-around_medium">
+            <lightning-button variant="brand" label="Navigate to VF Page" onclick={navigateVFHandler}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

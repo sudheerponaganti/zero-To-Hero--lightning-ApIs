@@ -1,0 +1,47 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title=" UiRecpordApi ---get , creat,update , delete single record ">
+        <div class="slds-var-m-around_medium">
+            <lightning-button variant="brand" label="cretae Record" class="slds-var-m-around_medium" onclick={createRecHandler} ></lightning-button>
+            <lightning-button variant="neutral" label="Delete Record" class="slds-var-m-around_medium" onclick={deleteRecHandler} ></lightning-button>
+            <lightning-button variant="neutral" label="update Record" class="slds-var-m-around_medium" onclick={updateRecHandler} ></lightning-button>
+        </div>
+    </lightning-card>
+    <lightning-card title="UiRecpordApi ---GetFieldValue" icon-name="standard:account">
+<template if:true={acctName}>
+    <div class="slds-m-around_medium">
+        <p><strong>{acctName}</strong></p>
+        <p>{revenue}</p>
+        <p>{created}</p>
+        <p>{expiration}</p>
+    </div>
+</template>
+
+</lightning-card>
+
+<lightning-card title="UiRecordApi --- getMultiple records">
+    <div class="slds-var-m-around_medium">
+       <template if:true={multiRecordsVals}>
+        <template for:each={multiRecordsVals} for:item="recItem">
+            <p key={recItem.result.id}><strong>{recItem.result.apiName}</strong>-- {recItem.result.fields.Name.value}</p>
+        </template>
+       </template>
+    </div>
+</lightning-card>
+
+<lightning-card title="UiRecordApi --- update Multi records">
+    <div class="slds-var-m-around_medium">
+       <template if:true={listViewData}>
+        <lightning-datatable
+        key-field="Id"
+        data={listViewData}
+        draft-values={draftValues}
+        columns={listViewColumns}
+        onsave={handleSaveHandler}
+        hide-checkbox-column>
+       </lightning-datatable>
+       </template>
+    </div>
+</lightning-card>
+
+</template>

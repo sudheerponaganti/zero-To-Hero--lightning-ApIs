@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="slot without footer and settter Parent">
+        <div class="slds-var-m-around_medium">
+            <c-slot-child user-data={userDetail} class="firstChild">
+                <p class="slds-text-color_error" slot="name">My Name is Salesforce Noob</p>
+                <p class="slds-text-color_success" slot="nation">the Universe </p>
+                <!-- <p slot="footer"> Hi this is Footer</p> -->
+            </c-slot-child>
+        </div>
+    </lightning-card>
+    <lightning-card title="slot with footer and settter Parent">
+        <div class="slds-var-m-around_medium">
+            <c-slot-child user-data={userDetail}>
+                <p class="slds-text-color_error" slot="name">My Name is Salesforce Noob</p>
+                <p class="slds-text-color_success" slot="nation">the Universe </p>
+                <p slot="footer"> Hi this is Footer</p>
+            </c-slot-child>
+        </div>
+    </lightning-card>
+</template>

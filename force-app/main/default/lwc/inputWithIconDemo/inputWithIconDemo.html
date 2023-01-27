@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Input With Icon Demo">
+        <div class="slds-var-m-around_medium">
+            <div class="slds-is-relative">
+                <lightning-icon class="inputIcon icon-right" size="x-small" icon-name="utility:email" alternative-text="email" title="Email"></lightning-icon>
+                <lightning-input class="icon-right" type="email" label="Email address"></lightning-input>
+                <!-- <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="text-input-id-49">Email address</label>
+                    <div class="slds-form-element__control">
+                      <input type="text" id="text-input-id-49" class="icon-right slds-input" />
+                    </div>
+                </div> -->
+            </div>
+            <div class="slds-is-relative">
+                <lightning-icon class="inputIcon icon-right" size="x-small" icon-name={passwordIcon} onclick={iconChangeHandler} alternative-text="password" title="Password"></lightning-icon>
+                <lightning-input class="icon-right" type={passwordType} label="Enter your password" name="input1"></lightning-input>
+            </div>
+           
+        </div>
+    </lightning-card>
+</template>

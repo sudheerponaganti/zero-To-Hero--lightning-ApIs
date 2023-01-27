@@ -1,0 +1,6 @@
+@import 'c/sharedCssLibrary';
+.css{
+    background-color:var(--lwc-colorBackgroundHighlight);
+    color:var(--lwc-brandBackgroundDark);
+    width : 90%;
+}

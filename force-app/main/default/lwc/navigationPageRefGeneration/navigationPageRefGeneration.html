@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="custom Pageref Generation">
+        <div class="slds-var-m-around_medium">
+            <a href={showPanelUrl} onclick={handleShowPanelClick}>Show Panel</a>
+            <div if:true={showPanel}>
+                <h1>This is the panel</h1>
+                <a href={noPanelUrl} onclick={handleNoPanelClick}>Hide Panel</a>
+            </div>
+        </div>
+    </lightning-card>
+</template>

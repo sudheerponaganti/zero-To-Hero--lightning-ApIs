@@ -1,0 +1,6 @@
+@import 'c/sharedCssLibrary';
+.external{
+    background-color:var(--lwc-colorBackgroundRowNew);
+    color:var(--lwc-brandContrast);
+    /* width : 80% */
+}

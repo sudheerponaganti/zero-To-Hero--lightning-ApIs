@@ -1,0 +1,38 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="messageReceived" type="String"/>
+    <aura:attribute name="messageInputValue" type="String"/>
+    <aura:attribute name="subscriptionRef" type="String"/>
+<lightning:messageChannel
+type="Communications__c"
+aura:id="CommunicationChannelId"
+onMessage="{!c.handleMessage}"
+scope="APPLICATION">
+</lightning:messageChannel>
+
+<lightning:card title="Lms Aura subscription">
+    <div class="slds-var-m-around_medium">
+        <label>Enter Publish Message</label>
+        <input type="text"
+        id="messageInput"
+        name="messageInput"
+        class="slds-input"
+        value="{!v.messageInputValue}"
+        onkeyup="{!c.inputHandler}" />
+    </div>
+
+    <div class="slds-var-m-around_medium">
+      <lightning:button variant="brand"
+        label="publish Message"
+        onclick="{!c.pubisHandler}"></lightning:button>
+    </div>
+
+    <div class="slds-var-m-around_medium">
+        <label>The subscribed  Message</label>
+     <h1><strong>{!v.messageReceived}</strong></h1>
+     <lightning:button variant="brand"
+     label="unsubscribe Channel"
+     class="slds-var-m-around_large"
+     onclick="{!c.unsubscribeHandler}"></lightning:button>
+    </div>
+</lightning:card>
+</aura:component>	

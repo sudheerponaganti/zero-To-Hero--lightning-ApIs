@@ -1,0 +1,9 @@
+:host{
+    color: green;
+    font-size: 20px;
+    background-color: darkkhaki;
+    display: block;
+}
+:host(.firstChild){
+    font-size: 20px;
+}

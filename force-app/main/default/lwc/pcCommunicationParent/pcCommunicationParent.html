@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Parent-Child Parent Comp Primitive data">
+        <div class="slds-var-m-around_medium">
+            <c-pc-communication-child 
+            primitive-val="getting primitive fom parent" 
+            carousel-details={carouselData}
+            progress-val={progressValue}></c-pc-communication-child>
+        </div>
+        <lightning-input class="slds-var-m-around_medium" type="number" name="input1" label="Enter a number" onchange={progressChangeHandler} ></lightning-input>
+        <lightning-button  class="slds-var-m-around_medium" label="progressHandler" variant="brand" onclick={progressBarHandler} ></lightning-button>
+    </lightning-card>
+</template>

@@ -1,0 +1,18 @@
+<template>
+    <!-- <lightning-card title="slot and settter Child"> -->
+        <div class="slds-var-m-around_medium">
+            <p><strong>Name</strong>- {userData.name}</p>
+            <p><strong>Age</strong>- {userData.age}</p>
+            <p><strong>city</strong>- {userData.city}</p>
+
+            <p>What is your Name ?</p>
+            <p><slot name="name"></slot></p>
+            <p>what is your Nation?</p>
+            <p><slot name="nation"></slot></p>
+
+            <footer class="slds-card__footer slds-hide">
+                <slot name="footer" onslotchange={handleFooter} ></slot>
+            </footer>
+        </div>
+    <!-- </lightning-card> -->
+</template>
